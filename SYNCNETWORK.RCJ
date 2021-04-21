@@ -1,8 +1,10 @@
 
 ::
-:: Robocopy Job C:\USERS\CP035982\CODE\ROBOCOPY-JOBS\SYNC.RCJ
+:: Robocopy Job C:\USERS\CP035982\CODE\ROBOCOPY-JOBS\SYNCNETWORK.RCJ
 ::
 :: Created by cp035982 on Tuesday, April 20, 2021 at 3:06:05 PM
+::
+:: > robocopy /MIR /JOB:PUSHNETWORK /SAVE:SYNCNETWORK /QUIT
 ::
 :: Preset options for syncing updates to a network location. It
 :: pushes changes and deletes files that have been deleted in

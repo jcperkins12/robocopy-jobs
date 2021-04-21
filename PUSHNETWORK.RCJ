@@ -1,8 +1,10 @@
 
 ::
-:: Robocopy Job C:\USERS\CP035982\CODE\ROBOCOPY-JOBS\PUSH.RCJ
+:: Robocopy Job C:\USERS\CP035982\CODE\ROBOCOPY-JOBS\PUSHNETWORK.RCJ
 ::
 :: Created by cp035982 on Tuesday, April 20, 2021 at 6:04:22 PM
+::
+:: > robocopy /Z /JOB:PUSHLOCAL /SAVE:PUSHNETWORK /QUIT
 ::
 :: Preset options for pushing updates to a network location. It
 :: only pushes changes, it doens't delete anything.

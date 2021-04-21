@@ -1,16 +1,14 @@
 
 ::
-:: Robocopy Job C:\USERS\CP035982\CODE\ROBOCOPY-JOBS\EXCLUDE-CODE-ENV.RCJ
+:: Robocopy Job C:\USERS\CP035982\CODE\ROBOCOPY-JOBS\SYNCLOCAL.RCJ
 ::
-:: Created by cp035982 on Tuesday, April 20, 2021 at 3:29:23 PM
+:: Created by cp035982 on Tuesday, April 20, 2021 at 3:06:05 PM
 ::
-:: > robocopy /XD "node_modules" "venv" ".venv" "coverage" \
-:      /XF "*.pyc" /SAVE:EXCLUDE-CODE-ENV /QUIT
+:: > robocopy /MIR /JOB:PUSHLOCAL /SAVE:SYNCLOCAL /QUIT
 ::
-:: Exclude files associated with a coding environment that can be
-:: downloaded or re-installed through existing scripts or package
-:: managers like npm, yarn, conda and pip
-::
+:: Preset options for syncing updates to a location on a local drive.
+:: It pushes changes and deletes files that have been deleted in
+:: the src dircetory.
 
 ::
 :: Source Directory :
@@ -34,21 +32,32 @@
 :: Exclude These Directories :
 ::
 	/XD		:: eXclude Directories matching these names
+		local_only
 		node_modules
+		.pytest_cache
+		ipynb_checkpoints
+		__pycache__
+		.mypy_cache
+		plugged
 		venv
 		.venv
-		coverage
 
 ::
 :: Exclude These Files :
 ::
 	/XF		:: eXclude Files matching these names
-		*.pyc
+		~*
+		*~
+	/XO		:: eXclude Older files.
 ::
 :: Copy options :
 ::
+	/S		:: copy Subdirectories, but not empty ones.
+	/E		:: copy subdirectories, including Empty ones.
 	/DCOPY:DA	:: what to COPY for directories (default is /DCOPY:DA).
 	/COPY:DAT	:: what to COPY for files (default is /COPY:DAT).
+	/PURGE		:: delete dest files/dirs that no longer exist in source.
+	/MIR		:: MIRror a directory tree (equivalent to /E plus /PURGE).
 ::
 :: Retry Options :
 ::
@@ -57,3 +66,4 @@
 ::
 :: Logging Options :
 ::
+	/TS		:: include source file Time Stamps in the output.

@@ -4,6 +4,9 @@
 ::
 :: Created by cp035982 on Tuesday, April 20, 2021 at 3:29:32 PM
 ::
+:: > robocopy /XD ".pytest_cache" "ipynb_checkpoints" "__pycache__" \
+::     ".mypy_cache" "plugged" /XF "~*" "*~" /SAVE:EXCLUDE-GEN /QUIT
+::
 :: Exclude general cache and temporary files from any functions
 ::
 
