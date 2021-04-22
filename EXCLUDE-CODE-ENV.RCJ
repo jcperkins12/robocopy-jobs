@@ -5,7 +5,7 @@
 :: Created by cp035982 on Tuesday, April 20, 2021 at 3:29:23 PM
 ::
 :: > robocopy /XD "node_modules" "venv" ".venv" "coverage" \
-:      /XF "*.pyc" /SAVE:EXCLUDE-CODE-ENV /QUIT
+::     /XF "*.pyc" /SAVE:EXCLUDE-CODE-ENV /QUIT
 ::
 :: Exclude files associated with a coding environment that can be
 :: downloaded or re-installed through existing scripts or package
