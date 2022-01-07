@@ -19,6 +19,6 @@ EXIT /B %maxerror%
 @REM run the robocopy job
 robocopy /JOB:%~1 /MOT:15
 @REM If you want do change the error code reported by robocopy, do so
-@REM here with some thing like this.
+@REM here with something like this.
 @REM robocopy /JOB:%~1 /L ^& IF %ERRORLEVEL% LEQ 1 EXIT /B 0
 EXIT /B %ERRORLEVEL%
